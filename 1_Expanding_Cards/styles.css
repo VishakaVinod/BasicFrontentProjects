@@ -1,0 +1,111 @@
+/* Default Font */
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    /*When I add border or padding, it doesn't affect the width of the element*/
+    box-sizing: border-box;
+}
+
+body {
+    /* Default font */
+    font-family: 'Muli', sans-serif;
+    /* Flex box to center everything */
+    display: flex;
+    /* To display all elements vertically (default is horizontal) */
+    flex-direction: column;
+    /* If flex-direction:column then centers horizontally, else centers vertically */
+    align-items: center;
+    /* To center vertically */
+    justify-content: center;
+    /* To center vertically we need to set height. 100vh is viewport heigh (entire height of browser) */
+    height: 100vh;
+    /* Remove default scrollbars */
+    overflow: hidden;
+    /* Removing all margin */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+    color: white;
+}
+
+.panel {
+    flex: auto;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* Background Images */
+#card1 {
+    background-image: url("images/img1.jpg");
+}
+
+#card2 {
+    background-image: url("images/img2.jpg");
+}
+
+#card3 {
+    background-image: url("images/img3.jpg");
+}
+
+#card4 {
+    background-image: url("images/img4.jpg");
+}
+
+#card5 {
+    background-image: url("images/img5.jpg");
+}
+
+/* Small Screen Display */
+@media(max-width: 780px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel {
+        margin: 5px;
+    }
+
+    #card5 {
+        display: none;
+    }
+}
+
+@media(max-width: 480px) {
+
+    #card4,
+    #card5 {
+        display: none;
+    }
+}
+
+@media(max-height:480px) {
+    h1 {
+        display: none;
+    }
+}
